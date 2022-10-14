@@ -1,11 +1,15 @@
 import { Button, Form, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import { crearRecetaAPI } from "../../helpers/queries";
+import { useNavigate } from "react-router-dom";
 
 const CrearReceta = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm({
     defaultValues: {
       nombreReceta: "",
@@ -15,12 +19,27 @@ const CrearReceta = () => {
     },
   });
 
+  const navegacion = useNavigate();
+
   const onSubmit = (datos) => {
     console.log(datos);
+    crearRecetaAPI(datos).then((respuesta)=>{
+      if (respuesta.status === 201) {
+        Swal.fire(
+          "Receta creada",
+          "La receta fue creado correctamente",
+          "success"
+        );
+        reset();
+        navegacion('/administrador')
+      } else {
+        Swal.fire("Ocurrio un error", "Vuelva a intentarlo mas tarde", "error");
+      }
+    })
   };
 
   return (
-    <Container className="my-5">
+    <Container className="my-5 mainSection">
       <h2 className="display-4">Nueva Receta</h2>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>

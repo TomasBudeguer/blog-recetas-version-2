@@ -8,10 +8,12 @@ import Inicio from './components/views/Inicio';
 import Error404 from './components/views/Error404';
 import Menu from './components/common/Menu';
 import Footer from './components/common/Footer';
+import './components/app.css'
 
 function App() {
   return (
     <BrowserRouter>
+    <Menu></Menu>
     <Routes>
       <Route exact path='/' element={<Inicio></Inicio>}></Route>
       <Route exact path='/administrador' element={<Administrador></Administrador>}></Route>
@@ -22,6 +24,7 @@ function App() {
       <Route exact path='/footer' element={<Footer></Footer>}></Route>
       <Route exact path='*' element={<Error404></Error404>}></Route>
     </Routes>
+    <Footer></Footer>
     </BrowserRouter>
   );
 }

@@ -1,6 +1,6 @@
 const Inicio = () => {
     return (
-        <div>
+        <div className="mainSection">
             inicio
         </div>
     );

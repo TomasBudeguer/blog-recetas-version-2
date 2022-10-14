@@ -1,8 +1,8 @@
 const Error404 = () => {
     return (
-        <div>
+        <section className="mainSection">
             error
-        </div>
+        </section>
     );
 };
 

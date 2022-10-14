@@ -1,12 +1,12 @@
 import { Button } from "react-bootstrap";
-const ItemReceta = () => {
+const ItemReceta = ({receta}) => {
   return (
     <tr>
-      <td>1</td>
-      <td>Nombre receta</td>
-      <td>Descripcion</td>
-      <td>URL</td>
-      <td>Categoria</td>
+      <td>{receta.id}</td>
+      <td>{receta.nombreReceta}</td>
+      <td>{receta.descripcion}</td>
+      <td>{receta.imagen}</td>
+      <td>{receta.categoria}</td>
       <td>
         <Button className="btn btn-success me-2 mb-1">Editar</Button>
         <Button variant="danger" className="mb-1">

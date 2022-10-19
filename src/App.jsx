@@ -17,7 +17,7 @@ function App() {
     <Routes>
       <Route exact path='/' element={<Inicio></Inicio>}></Route>
       <Route exact path='/administrador' element={<Administrador></Administrador>}></Route>
-      <Route exact path='/detalle-receta' element={<DetalleReceta></DetalleReceta>}></Route>
+      <Route exact path='/detalle-receta/:id' element={<DetalleReceta></DetalleReceta>}></Route>
       <Route exact path='/administrar/crear' element={<CrearReceta></CrearReceta>}></Route>
       <Route exact path='/administrar/editar/:id' element={<EditarReceta></EditarReceta>}></Route>
       <Route exact path='/menu' element={<Menu></Menu>}></Route>

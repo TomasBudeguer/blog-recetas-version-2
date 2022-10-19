@@ -1,15 +1,23 @@
-import { Col, Card, Button } from "react-bootstrap";
+import { Col, Card, Badge } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const CardReceta = () => {
+const CardReceta = ({receta}) => {
   return (
     <Col sm={12} md={4} lg={3}>
       <Card className="mb-4">
-        <Card.Img variant="top" src="https://images.pexels.com/photos/4033636/pexels-photo-4033636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+        <Card.Img variant="top" src={receta.imagen} />
         <Card.Body>
-          <Card.Title>Nombre Receta</Card.Title>
-          <Card.Text>Descripcion</Card.Text>
+          <div className="d-flex justify-content-between">
+            <aside>
+            <Card.Title className="text-center">{receta.nombreReceta}</Card.Title>    
+            </aside>
+            <aside>
+            <Badge bg="success">{receta.categoria}</Badge>
+            </aside>
+          </div>     
+          <Card.Text>Descripcion: {receta.descripcion}</Card.Text>
           <hr />
-          <Button variant="danger">Ver más</Button>
+          <Link className="btn btn-success" to={`/detalle-receta/${receta.id}`}>Ver más</Link>
         </Card.Body>
       </Card>
     </Col>

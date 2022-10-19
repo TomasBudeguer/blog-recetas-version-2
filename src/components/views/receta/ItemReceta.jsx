@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { borrarRecetaAPI, consultarAPI } from "../../helpers/queries";
 
@@ -46,7 +47,7 @@ const ItemReceta = ({ receta, setRecetas }) => {
       <td>{receta.imagen}</td>
       <td>{receta.categoria}</td>
       <td>
-        <Button className="btn btn-success me-2 mb-1">Editar</Button>
+        <Link className="btn btn-success me-2 mb-1" to={`/administrar/editar/${receta.id}`}>Editar</Link>
         <Button variant="danger" className="mb-1" onClick={borrarProducto}>
           Borrar
         </Button>

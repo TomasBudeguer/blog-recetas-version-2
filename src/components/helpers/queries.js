@@ -30,8 +30,36 @@ export const borrarRecetaAPI = async (id) => {
     const respuesta = await fetch(`${URLRecetas}/${id}`, {
       method: "DELETE",
     });
-    return respuesta
+    return respuesta;
   } catch (error) {
-    console.log(error)
+    console.log(error);
+  }
+};
+
+export const obtenerRecetaAPI = async (id) => {
+  try {
+    const respuesta = await fetch(URLRecetas + "/" + id);
+    const recetaBuscada = {
+      dato: await respuesta.json(),
+      status: respuesta.status,
+    };
+    return recetaBuscada;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const editarRecetaAPI = async (id, datosActualizados) => {
+  try {
+    const respuesta = await fetch(URLRecetas + "/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(datosActualizados),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
   }
 };

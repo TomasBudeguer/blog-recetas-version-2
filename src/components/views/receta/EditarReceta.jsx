@@ -1,11 +1,38 @@
+import { useEffect } from "react";
 import { Button, Form, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import { editarRecetaAPI, obtenerRecetaAPI } from "../../helpers/queries";
 
 const EditarReceta = () => {
+  const { id } = useParams();
+  const navegacion = useNavigate();
+
+  useEffect(() => {
+    obtenerRecetaAPI(id).then((respuesta) => {
+      if (respuesta.status === 200) {
+        // cargar los datos de la respuesta en el formulario
+        setValue("nombreReceta", respuesta.dato.nombreReceta);
+        setValue("descripcion", respuesta.dato.descripcion);
+        setValue("imagen", respuesta.dato.imagen);
+        setValue("categoria", respuesta.dato.categoria);
+        console.log(respuesta);
+      } else {
+        Swal.fire(
+          "Ocurrio un error",
+          "Intente este paso en unos minutos",
+          "error"
+        );
+      }
+    });
+  }, []);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm({
     defaultValues: {
       nombreReceta: "",
@@ -15,8 +42,24 @@ const EditarReceta = () => {
     },
   });
 
-  const onSubmit = (datos) => {
-    console.log(datos);
+  const onSubmit = (receta) => {
+    console.log(receta);
+    editarRecetaAPI(id, receta).then((respuesta) => {
+      if (respuesta.status === 200) {
+        Swal.fire(
+          "Receta actualizada",
+          "La receta fue actualizada correctamente",
+          "success"
+        );
+        navegacion("/administrador");
+      } else {
+        Swal.fire(
+          "Ocurrio un error",
+          "Intente este paso en unos minutos",
+          "error"
+        );
+      }
+    });
   };
   return (
     <Container className="my-5">

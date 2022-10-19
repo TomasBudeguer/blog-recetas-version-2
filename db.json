@@ -6,6 +6,13 @@
       "categoria": "salado",
       "imagen": "https://images.pexels.com/photos/4033636/pexels-photo-4033636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "id": 1
+    },
+    {
+      "nombreReceta": "fideos",
+      "descripcion": "fideos con salsa",
+      "imagen": "https://i.ibb.co/Yj1bF0W/remera-Bridgemere.png",
+      "categoria": "bebida caliente",
+      "id": 2
     }
   ]
 }

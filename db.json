@@ -2,17 +2,52 @@
   "recetas": [
     {
       "nombreReceta": "Lasagna",
-      "descripcion": "dsadasdasdasdsadasdasdasdasds",
+      "descripcion": "Receta de Lasagna",
+      "imagen": "https://d1uz88p17r663j.cloudfront.net/original/4a783abdbfe1f7a79fbf5f93139b3c68_Lasagna-de-carne-.jpg",
       "categoria": "salado",
-      "imagen": "https://images.pexels.com/photos/4033636/pexels-photo-4033636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "id": 1
     },
     {
-      "nombreReceta": "fideos",
+      "nombreReceta": "Fideos",
       "descripcion": "fideos con salsa",
-      "imagen": "https://i.ibb.co/Yj1bF0W/remera-Bridgemere.png",
+      "imagen": "https://t1.rg.ltmcdn.com/es/posts/9/5/6/fideos_con_salsa_de_tomate_41659_600.jpg",
       "categoria": "bebida caliente",
       "id": 2
+    },
+    {
+      "nombreReceta": "Selva Negra",
+      "descripcion": "Receta de la torta Selva Negra",
+      "imagen": "https://www.paulinacocina.net/wp-content/uploads/2022/04/selva-negra-receta-1.jpg",
+      "categoria": "tortas",
+      "id": 3
+    },
+    {
+      "nombreReceta": "Cafe Irlandes",
+      "descripcion": "Receta de Cafe Irlandes",
+      "imagen": "https://elcoctelero.com/wp-content/uploads/2021/06/coctel-cafe-irlandes.jpg",
+      "categoria": "bebida caliente",
+      "id": 5
+    },
+    {
+      "nombreReceta": "Flan de huevo con dulce de leche",
+      "descripcion": "Receta de Flan de huevo con dulce de leche",
+      "imagen": "https://www.clarin.com/img/2020/02/18/nQSsF0CR_340x340__1.jpg",
+      "categoria": "postres",
+      "id": 6
+    },
+    {
+      "nombreReceta": "Frapuccino",
+      "descripcion": "Receta de Frapuccino",
+      "imagen": "https://saborgourmet.com/wp-content/uploads/CinnamonDolceFrappuccino.jpg",
+      "categoria": "bebida fria",
+      "id": 7
+    },
+    {
+      "nombreReceta": "Ensalada Rusa",
+      "descripcion": "Receta de Ensalada Rusa",
+      "imagen": "http://alicante.com.ar/uploads/recetas/52_receta.jpg",
+      "categoria": "ensaldas",
+      "id": 8
     }
   ]
 }

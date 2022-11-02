@@ -16,7 +16,7 @@ const ItemReceta = ({ receta, setRecetas }) => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        borrarRecetaAPI(receta.id).then((respuesta) => {
+        borrarRecetaAPI(receta._id).then((respuesta) => {
           if (respuesta.status === 200) {
             consultarAPI().then((respuesta) => {
               setRecetas(respuesta);
@@ -41,13 +41,13 @@ const ItemReceta = ({ receta, setRecetas }) => {
 
   return (
     <tr>
-      <td>{receta.id}</td>
+      <td>{receta._id}</td>
       <td>{receta.nombreReceta}</td>
       <td>{receta.descripcion}</td>
       <td>{receta.imagen}</td>
       <td>{receta.categoria}</td>
       <td>
-        <Link className="btn btn-success me-2 mb-1" to={`/administrar/editar/${receta.id}`}>Editar</Link>
+        <Link className="btn btn-success me-2 mb-1" to={`/administrar/editar/${receta._id}`}>Editar</Link>
         <Button variant="danger" className="mb-1" onClick={borrarProducto}>
           Borrar
         </Button>

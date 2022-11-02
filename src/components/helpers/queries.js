@@ -1,4 +1,5 @@
-const URLRecetas = "http://localhost:3004/recetas";
+// const URLRecetas = "http://localhost:3004/recetas"; //json-server
+const URLRecetas = "http://localhost:4000/apirecetas/recetas";
 
 export const consultarAPI = async () => {
   try {

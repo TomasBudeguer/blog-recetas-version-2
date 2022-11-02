@@ -17,7 +17,7 @@ const CardReceta = ({receta}) => {
           </div>     
           <Card.Text>Descripcion: {receta.descripcion}</Card.Text>
           <hr />
-          <Link className="btn btn-success" to={`/detalle-receta/${receta.id}`}>Ver más</Link>
+          <Link className="btn btn-success" to={`/detalle-receta/${receta._id}`}>Ver más</Link>
         </Card.Body>
       </Card>
     </Col>

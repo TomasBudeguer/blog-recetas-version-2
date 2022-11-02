@@ -62,7 +62,7 @@ const EditarReceta = () => {
     });
   };
   return (
-    <Container className="my-5">
+    <Container className="my-5 mainSection">
       <h2 className="display-4">Editar Receta</h2>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>

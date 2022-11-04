@@ -1,5 +1,5 @@
 // const URLRecetas = "http://localhost:3004/recetas"; //json-server
-const URLRecetas = "http://localhost:4000/apirecetas/recetas";
+const URLRecetas = process.env.REACT_APP_API_RECETAS
 const URLusuarios = "http://localhost:3004/usuarios";
 
 export const consultarAPI = async () => {

@@ -1,7 +1,8 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { consultarUsuariosAPI } from "../helpers/queries";
+import { consultarUsuariosAPI} from "../helpers/queries";
 
 const Login = () => {
   const {
@@ -15,7 +16,26 @@ const Login = () => {
     },
   });
 
+  const navegacion = useNavigate();
+
   const onSubmit = (datos) => {
+    consultarUsuariosAPI().then((respuesta) => {
+      if(respuesta.find((usuario) => usuario.email === datos.email && usuario.contrasenia === datos.contrasenia)){
+        Swal.fire(
+          "Sesion iniciada",
+          "Disfrute de nuestros servicios!",
+          "success"
+        );
+        navegacion('/administrador')
+        localStorage.setItem("usuarioRecetas", JSON.stringify(datos));
+      }else{
+        Swal.fire(
+          "Usuario invalido",
+          "El email o contraseña son invalidos!",
+          "error"
+        );
+      }
+    });
     console.log(datos);
   };
 

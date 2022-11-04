@@ -1,5 +1,6 @@
 // const URLRecetas = "http://localhost:3004/recetas"; //json-server
 const URLRecetas = "http://localhost:4000/apirecetas/recetas";
+const URLusuarios = "http://localhost:3004/usuarios";
 
 export const consultarAPI = async () => {
   try {
@@ -60,6 +61,31 @@ export const editarRecetaAPI = async (id, datosActualizados) => {
       body: JSON.stringify(datosActualizados),
     });
     return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const crearUsuarioAPI = async (usuario) => {
+  try {
+    const respuesta = await fetch(URLusuarios, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const consultarUsuariosAPI = async () => {
+  try {
+    const respuesta = await fetch(URLusuarios);
+    const listaUsuarios = await respuesta.json();
+    return listaUsuarios;
   } catch (error) {
     console.log(error);
   }

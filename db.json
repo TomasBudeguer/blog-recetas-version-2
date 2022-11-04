@@ -49,5 +49,21 @@
       "categoria": "ensaldas",
       "id": 8
     }
+  ],
+  "usuarios": [
+    {
+      "nombre": "Tomi",
+      "apellido": "Budeguer",
+      "email": "tomibudeguer20@gmail.com",
+      "contrasenia": "Holamundo1",
+      "id": 1
+    },
+    {
+      "nombre": "Francisco",
+      "apellido": "Budeguer",
+      "email": "francisco@gmail.com",
+      "contrasenia": "Francisco1",
+      "id": 2
+    }
   ]
 }

@@ -20,6 +20,18 @@ const Registrar = () => {
 
   const onSubmit = (datos) => {
     console.log(datos);
+    crearUsuarioAPI(datos).then((respuesta) => {
+      if (respuesta.status === 201) {
+        Swal.fire(
+          "Usuario creado",
+          "El usuario fue creado correctamente",
+          "success"
+        );
+        reset();
+      } else {
+        Swal.fire("Ocurrio un error", "Vuelva a intentarlo mas tarde", "error");
+      }
+    });
   };
 
   return (

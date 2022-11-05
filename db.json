@@ -64,6 +64,13 @@
       "email": "francisco@gmail.com",
       "contrasenia": "Francisco1",
       "id": 2
+    },
+    {
+      "nombre": "Rolling",
+      "apellido": "Administrador",
+      "email": "rolling@administrador.com",
+      "contrasenia": "Rolling1",
+      "id": 3
     }
   ]
 }
